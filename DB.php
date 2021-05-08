@@ -23,6 +23,8 @@ protected static $conn;
             throw new Exception(self::$conn->connect_error);
         }
 
+		// SET CHARSET TO UTF-8
+		self::$conn->set_charset("utf8mb4");
     }
 
 
@@ -30,21 +32,21 @@ protected static $conn;
         
         if ( isset($nif) && !empty($nif) ) {
            
-            $sql = "SELECT * FROM Curso WHERE Nif = '".$nif."' LIMIT 1";
+            $sql = "SELECT * FROM curso WHERE Nif = '".$nif."' LIMIT 1";
             // echo 1;
         }
         elseif ( ( isset($cursoNome) && !empty($cursoNome) ) && (!isset($nif) || empty($nif)) ) {
            
-            $sql = "SELECT * FROM Curso WHERE Nome = '".$cursoNome."' ";
+            $sql = "SELECT * FROM curso WHERE Nome = '".$cursoNome."' ";
             // echo 2;
         }
         elseif ( ( isset($cursoNome) && !empty($cursoNome) ) && isset($nif) && !empty($nif) ) {
            
-            $sql = "SELECT * FROM Curso WHERE Nif = '".$nif."' AND Nome = '".$cursoNome."' ";
+            $sql = "SELECT * FROM curso WHERE Nif = '".$nif."' AND Nome = '".$cursoNome."' ";
             // echo 3;
         }
         else {
-            $sql = "SELECT * FROM Curso ";
+            $sql = "SELECT * FROM curso ";
             // echo 4;
         }
 
@@ -80,7 +82,7 @@ protected static $conn;
             elseif ($objectoPessoa instanceof Professor) $tipoPessoa = "Professor";
             else $tipoPessoa = NULL;
 
-            $sql = "INSERT INTO Curso (Nif, Tipo, Pessoa_Obj, Nome) VALUES 
+            $sql = "INSERT INTO curso (Nif, Tipo, Pessoa_Obj, Nome) VALUES 
            ('".$objectoPessoa->getNif()."', 
             '".$tipoPessoa."',
             '".serialize($objectoPessoa)."',
@@ -109,7 +111,7 @@ protected static $conn;
             elseif ($objectoPessoa instanceof Professor) $tipoPessoa = "Professor";
             else $tipoPessoa = NULL;
 
-            $sql = "INSERT INTO Curso (Nif, Tipo, Pessoa_Obj, Nome) VALUES 
+            $sql = "INSERT INTO curso (Nif, Tipo, Pessoa_Obj, Nome) VALUES 
            ('".$objectoPessoa->getNif()."', 
             '".$tipoPessoa."',
             '".serialize($objectoPessoa)."',
