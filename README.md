@@ -1,7 +1,7 @@
 # Pure-PHP-OOP-School-Admin
 Simple school admin panel, built to refresh my coding skills using just PHP, in a OOP-style.
 
-[DEMO](https://demos.canalfoto.org/public_html/php-school-admin/) 
+[DEMO](https://demos.canalfoto.org/php-school-admin/) 
 
 # How-to
 - Create a new DB in mysql
