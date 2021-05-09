@@ -1,7 +1,7 @@
 # Pure-PHP-OOP-School-Admin
 Simple school admin panel, built to refresh my coding skills using just PHP, in a OOP-style.
 
-[DEMO](https://demos.canalfoto.org/php-school-admin/) 
+[DEMO](https://demos.canalfoto.org/public_html/php-school-admin/) 
 
 # How-to
 - Create a new DB in mysql
@@ -25,21 +25,6 @@ CREATE TABLE IF NOT EXISTS `curso` (
   `Pessoa_Obj` text,
   `Nome` varchar(45) NOT NULL DEFAULT 'Matematica',
   PRIMARY KEY (`Nif`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `pessoa`
---
-
-DROP TABLE IF EXISTS `pessoa`;
-CREATE TABLE IF NOT EXISTS `pessoa` (
-  `Nif` varchar(15) NOT NULL,
-  `Tipo` varchar(15) DEFAULT 'Aluno',
-  `Pessoa_Obj` text,
-  PRIMARY KEY (`Nif`),
-  UNIQUE KEY `nome_UNIQUE` (`Nif`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
