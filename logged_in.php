@@ -128,9 +128,11 @@ elseif ($_SERVER["REQUEST_METHOD"] == "POST" && empty($_POST['username']) ) {
               // basename() may prevent filesystem traversal attacks;
               // further validation/sanitation of the filename may be appropriate
               $name = basename($_FILES["ficheiro"]["name"][$key]);
-              $extension = pathinfo($_FILES['ficheiro']["name"][$key], PATHINFO_EXTENSION);
-              move_uploaded_file($tmp_name, "data/".$nif.".".$extension);
-          }
+              $ext = pathinfo($_FILES['ficheiro']["name"][$key], PATHINFO_EXTENSION);
+              
+              if ($ext=="jpg" OR $ext=="jpeg" OR $ext=="gif" OR $ext=="png" OR $ext=="pdf" OR $ext=="doc" OR $ext=="docx") {
+                move_uploaded_file($tmp_name, "data/".$nif.".".$ext);
+              }
         }
       }
 
