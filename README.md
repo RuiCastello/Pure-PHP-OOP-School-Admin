@@ -3,6 +3,18 @@ Simple school admin panel, built to refresh my coding skills using just PHP, in 
 
 [DEMO](https://demos.canalfoto.org/php-school-admin/) 
 
+
+- Visit the website and try out the following login credentials:
+> user: user  
+> pass: 1234  
+
+<br />
+
+> user: admin  
+> pass: admin  
+
+--- 
+
 # How-to
 - Create a new DB in mysql
 - Edit DB.php and add the respective mysql credentials
@@ -53,12 +65,3 @@ INSERT INTO `utilizador` (`ID`, `username`, `password`, `last_token`) VALUES
 (2, 'user', '1234', '');
 COMMIT;
 ```
-
-- Visit the website and try out the following login credentials:
-> user: user  
-> pass: 1234  
-
-<br />
-
-> user: admin  
-> pass: admin  
